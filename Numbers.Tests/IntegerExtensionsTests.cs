@@ -12,11 +12,15 @@ namespace Numbers.Tests
         [TestCase(98765432110L, ExpectedResult = ComparisonSigns.MoreThan | ComparisonSigns.Equals)]
         [TestCase(11234567889L, ExpectedResult = ComparisonSigns.LessThan | ComparisonSigns.Equals)]
         [TestCase(111111111111111L, ExpectedResult = ComparisonSigns.Equals)]
+        [TestCase(11L, ExpectedResult = ComparisonSigns.Equals)]
         [TestCase(12312342098671L, ExpectedResult = ComparisonSigns.MoreThan | ComparisonSigns.LessThan)]
         [TestCase(0L, ExpectedResult = null)]
         [TestCase(1L, ExpectedResult = null)]
         [TestCase(-1L, ExpectedResult = null)]
-        public ComparisonSigns? GetTypeComparisonSigns_Tests(long number) => number.GetTypeComparisonSigns();
+        public ComparisonSigns? GetTypeComparisonSigns_Tests(long number)
+        {
+            return number.GetTypeComparisonSigns();
+        }
 
         [TestCase(123456789L, ExpectedResult = "Strictly Increasing.")]
         [TestCase(long.MinValue, ExpectedResult = "Unordered.")]

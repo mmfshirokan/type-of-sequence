@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 namespace Numbers
 {
@@ -8,8 +8,8 @@ namespace Numbers
     [Flags]
     public enum ComparisonSigns
     {
-        LessThan = 1,
-        MoreThan = 2,
-        Equals = 4,
+        LessThan = 0b_0000_0001,
+        MoreThan = 0b_0000_0010,
+        Equals = 0b_0000_0100,
     }
 }
